@@ -6,7 +6,7 @@ const users = require("./routes/api/users");
 const games = require("./routes/api/games");
 
 const app = express();
-const io = require("socket.io")(80);
+
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -34,10 +34,3 @@ const port = process.env.PORT || 5000; // process.env.port is Heroku's port if y
 app.listen(port, () =>
   console.log(`Server is up and running on port ${port} !`)
 );
-
-io.on("connection", (socket) => {
-  socket.emit("news", { hello: "world" });
-  socket.on("my other event", (data) => {
-    console.log(data);
-  });
-});
