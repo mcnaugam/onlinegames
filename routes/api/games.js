@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const Game = require("../../models/Game");
+const Game = require("../../models/game");
 
-const User = require("../../models/User");
+const User = require("../../models/user");
 
 // add new game
 router.post("/", (req, res) => {
