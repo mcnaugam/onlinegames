@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:3000/game -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="stylesheet" href="./Quiz_files/materialize.min.css">
+    <link href="./Quiz_files/icon" rel="stylesheet">
+    <title>Quiz</title>
+  <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css"></style><style type="text/css">.inner-div {
+  width: inherit;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+}
+.blink {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* h5,
+h6 {
+  color: #001ee0;
+} */
+
+#root {
+  background-image: linear-gradient(to left, white, #e6e9fc);
+}
+
+/* b {
+  color: #001ee0;
+} */
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="padding-left: 50px;"><div class="App"><div><div class="row"><div class="col s3"><h5>Leaderboard</h5><div style="margin-left: 15px; margin-top: 15px;"><div style="position: relative;"><div class="row" style=""><div class="col s1" style="min-height: 25px; background-color: green;"></div><div class="col s4" style="margin: auto;">Peter</div><div class="col s1" style="margin: auto;">150</div><div class="col s1" style="margin: auto;">+10</div></div><div class="row" style=""><div class="col s1" style="min-height: 25px; background-color: cyan;"></div><div class="col s4" style="margin: auto;">Andrew</div><div class="col s1" style="margin: auto;">0</div><div class="col s1" style="margin: auto;"></div></div><div class="row" style=""><div class="col s1" style="min-height: 25px; background-color: red;"></div><div class="col s4" style="margin: auto;">Candice</div><div class="col s1" style="margin: auto;">0</div><div class="col s1" style="margin: auto;"></div></div></div></div><div><div style="margin-top: 50px; height: 100px;"><h5>Misses</h5></div><div style="margin-top: 150px;"><div><div><button class="btn btn-large waves-effect waves-light hoverable blue accent-3" style="width: 150px; border-radius: 3px; letter-spacing: 1.5px; margin-top: 1rem;">Undo</button></div><div><button class="btn btn-large waves-effect waves-light hoverable red accent-3" style="width: 150px; border-radius: 3px; letter-spacing: 1.5px; margin-top: 1rem;">End round</button></div></div></div></div></div><div class="col s9"><div style="margin-top: 25px;"><div><div style="position: relative;"><div><h5>Politics</h5></div><div><h6>American Presidents</h6></div><div><h6>Last 20 from 1901 - present day, more points for earlier presidents</h6></div></div></div><div><div class="row"><div class="col s12" style="margin-top: 10px;"><form novalidate=""><div class="input-field col s2"><input id="guess" type="text" value=""><label for="guess" class="active">Guess</label></div><div class="col s2"><button type="submit" class="btn btn-large waves-effect waves-light hoverable green accent-3" style="width: 150px; border-radius: 3px; letter-spacing: 1.5px; margin-top: 1rem;">Peter</button></div></form></div></div><div style="margin-top: 10px;"><div><div style="position: relative;"><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div><div class="row" style="margin-top: 0px; margin-bottom: 0px;"><div class="col s4" style="text-align: center; margin-bottom: 9px; min-height: 25px; border: 1px solid grey; background-image: linear-gradient(to right, rgb(230, 233, 252), white, rgb(230, 233, 252));"><b>  </b></div></div></div></div></div></div></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="./Quiz_files/materialize.min.js.download"></script>
+  <script src="./Quiz_files/bundle.js.download"></script><script src="./Quiz_files/0.chunk.js.download"></script><script src="./Quiz_files/main.chunk.js.download"></script><script src="./Quiz_files/main.5044c00887c59b1b1539.hot-update.js.download"></script>
+
+</body></html>

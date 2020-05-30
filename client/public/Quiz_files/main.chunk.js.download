@@ -1,0 +1,2347 @@
+(this["webpackJsonpquiz"] = this["webpackJsonpquiz"] || []).push([["main"],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/App.css ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/css/quiz.css":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/css/quiz.css ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".inner-div {\r\n  width: inherit;\r\n  position: absolute;\r\n  top: 30%;\r\n  transform: translateY(-50%);\r\n}\r\n.blink {\r\n  animation: blinker 2s linear infinite;\r\n}\r\n\r\n@keyframes blinker {\r\n  50% {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n/* h5,\r\nh6 {\r\n  color: #001ee0;\r\n} */\r\n\r\n#root {\r\n  background-image: linear-gradient(to left, white, #e6e9fc);\r\n}\r\n\r\n/* b {\r\n  color: #001ee0;\r\n} */\r\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/index.css ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "body {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\n    monospace;\n}\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./src/App.css":
+/*!*********************!*\
+  !*** ./src/App.css ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css", function() {
+		var newContent = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_addPlayers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/addPlayers */ "./src/components/addPlayers.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/header */ "./src/components/header.js");
+/* harmony import */ var _components_game__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/game */ "./src/components/game.js");
+var _jsxFileName = "C:\\git\\quiz\\src\\App.js";
+
+
+
+
+
+
+
+function App() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["BrowserRouter"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "App",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    exact: true,
+    path: "/",
+    component: _components_addPlayers__WEBPACK_IMPORTED_MODULE_2__["default"],
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    exact: true,
+    path: "/game",
+    component: _components_game__WEBPACK_IMPORTED_MODULE_5__["default"],
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 9
+    }
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./src/components/addPlayers.js":
+/*!**************************************!*\
+  !*** ./src/components/addPlayers.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_quiz_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/quiz.css */ "./src/css/quiz.css");
+/* harmony import */ var _css_quiz_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_quiz_css__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\git\\quiz\\src\\components\\addPlayers.js";
+
+
+
+class AddPlayers extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+
+    this.onChange = e => {
+      this.setState({
+        [e.target.id]: e.target.value
+      });
+    };
+
+    this.onSubmit = e => {
+      this.props.history.push({
+        pathname: "/game",
+        state: {
+          players: this.state.players
+        }
+      });
+    };
+
+    this.onAdd = e => {
+      e.preventDefault();
+      this.state.players.push(this.state.name);
+      this.setState({
+        players: this.state.players,
+        name: ""
+      });
+    };
+
+    this.state = {
+      name: "",
+      players: []
+    };
+  }
+
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "container",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s4 offset-s4",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s12",
+      style: {
+        paddingLeft: "11.250px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35,
+        columnNumber: 17
+      }
+    }, "Add players"), " below")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row inner-div",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s4 offset-s4",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      noValidate: true,
+      onSubmit: this.onSubmit,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      class: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "input-field col s8",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      onChange: this.onChange,
+      value: this.state.name,
+      id: "name",
+      type: "text",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 19
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      htmlFor: "name",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51,
+        columnNumber: 19
+      }
+    }, "Name")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s4",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      onClick: this.onAdd,
+      className: "btn btn-large waves-effect waves-light hoverable blue accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 19
+      }
+    }, "Add"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s12 offset-s4",
+      style: {
+        paddingLeft: "11.250px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      type: "submit",
+      className: "btn btn-large waves-effect waves-light hoverable green accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73,
+        columnNumber: 17
+      }
+    }, "Start game"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s12",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        position: "absolute"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PlayerList, {
+      players: this.state.players,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89,
+        columnNumber: 17
+      }
+    }))))));
+  }
+
+}
+
+class PlayerList extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    const listItems = this.props.players.map((player, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: i,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102,
+        columnNumber: 7
+      }
+    }, player));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 107,
+        columnNumber: 9
+      }
+    }, "Players"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 108,
+        columnNumber: 9
+      }
+    }, listItems));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (AddPlayers);
+
+/***/ }),
+
+/***/ "./src/components/game.js":
+/*!********************************!*\
+  !*** ./src/components/game.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_quiz_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/quiz.css */ "./src/css/quiz.css");
+/* harmony import */ var _css_quiz_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_quiz_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _data_questions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/questions */ "./src/data/questions.js");
+/* harmony import */ var _data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/14876504_correct_by_robotsound_preview.mp3 */ "./src/data/14876504_correct_by_robotsound_preview.mp3");
+/* harmony import */ var _data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/23205030_game-show-buzzer-wrong-answer_by_floraphonic_preview.mp3 */ "./src/data/23205030_game-show-buzzer-wrong-answer_by_floraphonic_preview.mp3");
+/* harmony import */ var _data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_flip_move__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-flip-move */ "./node_modules/react-flip-move/dist/react-flip-move.es.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_6__);
+var _jsxFileName = "C:\\git\\quiz\\src\\components\\game.js";
+
+
+
+
+
+
+
+
+class Game extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      players: [],
+      playerScores: [],
+      originalOrderPlayerScores: [],
+      misses: [],
+      questions: _data_questions__WEBPACK_IMPORTED_MODULE_2__["SET1"],
+      currentRound: 0,
+      allOut: false,
+      revealAllAnswers: false,
+      currentPlayer: {
+        name: "",
+        score: 0,
+        colour: "",
+        questions: [],
+        wrongAnswers: []
+      }
+    };
+    this.initialiseGame = this.initialiseGame.bind(this);
+    this.shufflePlayers = this.shufflePlayers.bind(this);
+    this.getColour = this.getColour.bind(this);
+    this.updateResult = this.updateResult.bind(this);
+    this.sortScores = this.sortScores.bind(this);
+    this.advancePlayer = this.advancePlayer.bind(this);
+    this.showAnswers = this.showAnswers.bind(this);
+    this.nextRound = this.nextRound.bind(this);
+    this.undoLastAnswer = this.undoLastAnswer.bind(this);
+  }
+
+  componentDidMount() {
+    let players = this.props.location.state.players;
+    this.setState({
+      players: players
+    }, () => this.initialiseGame());
+  }
+
+  allPlayersOut() {
+    let outPlayers = 0;
+    this.state.playerScores.forEach(player => {
+      if (player.wrongAnswers[this.state.currentRound] === 2) {
+        outPlayers++;
+      }
+    });
+    return outPlayers === this.state.playerScores.length;
+  }
+
+  undoLastAnswer() {
+    if (this.state.result) {
+      const result = this.state.result;
+      const player = this.state.result.player;
+      let scoreChangeValue = "";
+
+      if (result.outcome === "wrong") {
+        player.score = player.score + 10;
+        scoreChangeValue = "+10";
+        player.wrongAnswers[this.state.currentRound] = player.wrongAnswers[this.state.currentRound] - 1;
+      } else if (result.outcome === "correct") {
+        player.score = player.score - result.score;
+        scoreChangeValue = "-" + result.score;
+      }
+
+      this.state.misses.pop();
+      this.setState({
+        scoreChange: {
+          name: player.name,
+          value: scoreChangeValue
+        },
+        result: result,
+        currentPlayer: player
+      }, () => {
+        this.sortScores();
+      });
+    }
+  }
+
+  advancePlayer() {
+    if (!this.allPlayersOut()) {
+      const currentPlayerName = this.state.currentPlayer.name;
+      let currentIndex = this.state.originalOrderPlayerScores.findIndex(player => player.name === currentPlayerName);
+      let nextIndex = -1;
+      let found = false;
+
+      while (!found) {
+        nextIndex = currentIndex === 0 ? this.state.originalOrderPlayerScores.length - 1 : currentIndex - 1;
+
+        if (this.state.originalOrderPlayerScores[nextIndex].wrongAnswers[this.state.currentRound] < 2) {
+          found = true;
+        }
+
+        currentIndex = nextIndex;
+      }
+
+      this.setState({
+        currentPlayer: this.state.originalOrderPlayerScores[nextIndex]
+      });
+    } else {
+      this.setState({
+        allOut: true
+      });
+    }
+  }
+
+  showAnswers() {
+    this.setState({
+      revealAllAnswers: true,
+      answer: undefined
+    }, () => this.forceUpdate());
+  }
+
+  nextRound() {
+    this.state.playerScores.forEach(player => {
+      player.wrongAnswers.push(0);
+    });
+    this.setState({
+      currentRound: this.state.currentRound + 1,
+      revealAllAnswers: false,
+      allOut: false,
+      misses: [],
+      originalOrderPlayerScores: [...this.state.playerScores],
+      currentPlayer: this.state.playerScores[this.state.playerScores.length - 1]
+    }, () => this.forceUpdate());
+  }
+
+  updateResult(result) {
+    console.log("start of update reslt");
+
+    if (result.outcome !== "used") {
+      var scoreChangeValue = "";
+
+      if (result.outcome === "correct") {
+        this.state.currentPlayer.score += result.score;
+        scoreChangeValue = "+" + result.score;
+      } else if (result.outcome === "wrong") {
+        this.setState({
+          misses: this.state.misses.concat(result)
+        });
+        this.state.currentPlayer.score -= 10;
+        scoreChangeValue = "-" + 10;
+
+        if (this.state.currentPlayer.wrongAnswers && this.state.currentPlayer.wrongAnswers[this.state.currentRound]) {
+          this.state.currentPlayer.wrongAnswers[this.state.currentRound]++;
+        } else {
+          this.state.currentPlayer.wrongAnswers[this.state.currentRound] = 1;
+        }
+      }
+
+      this.setState({
+        scoreChange: {
+          name: this.state.currentPlayer.name,
+          value: scoreChangeValue
+        },
+        result: result
+      }, () => {
+        this.advancePlayer();
+        this.sortScores();
+      });
+    }
+
+    console.log("end of update result");
+  }
+
+  sortScores() {
+    const sortedScores = [...this.state.playerScores];
+    sortedScores.sort((player1, player2) => player2.score - player1.score);
+    this.setState({
+      playerScores: sortedScores
+    }, () => {
+      this.forceUpdate();
+    });
+  }
+
+  getColour(i) {
+    return ["red", "cyan", "green", "yellow", "orange"][i];
+  }
+
+  initialiseGame() {
+    let playerScores = [];
+    this.state.players.forEach((player, i) => {
+      playerScores.push({
+        name: player,
+        score: 0,
+        colour: this.getColour(i),
+        wrongAnswers: [0]
+      });
+    });
+    this.setState({
+      playerScores: playerScores,
+      currentPlayer: playerScores[playerScores.length - 1]
+    }, () => {
+      this.shufflePlayers();
+    });
+  }
+
+  shufflePlayers() {
+    let newPlayerScores = this.state.playerScores,
+        currentIndex = this.state.playerScores.length,
+        temporaryValue,
+        randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = newPlayerScores[currentIndex];
+      newPlayerScores[currentIndex] = newPlayerScores[randomIndex];
+      newPlayerScores[randomIndex] = temporaryValue;
+    }
+
+    this.setState({
+      playerScores: newPlayerScores,
+      originalOrderPlayerScores: newPlayerScores
+    }, () => this.forceUpdate());
+  }
+
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 261,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 262,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 263,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Leaderboard, {
+      playerScores: this.state.playerScores,
+      currentPlayer: this.state.currentPlayer,
+      scoreChange: this.state.scoreChange,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 264,
+        columnNumber: 13
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Controls, {
+      showAnswers: this.showAnswers,
+      revealAllAnswers: this.state.revealAllAnswers,
+      nextRound: this.nextRound,
+      misses: this.state.misses,
+      undoLastAnswer: this.undoLastAnswer,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 270,
+        columnNumber: 13
+      }
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s9",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 279,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Round, {
+      question: this.state.questions[this.state.currentRound],
+      currentRound: this.state.currentRound,
+      playerScores: this.state.playerScores,
+      updateResult: this.updateResult,
+      currentPlayer: this.state.currentPlayer,
+      allOut: this.state.allOut,
+      revealAllAnswers: this.state.revealAllAnswers,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 280,
+        columnNumber: 13
+      }
+    }))));
+  }
+
+}
+
+function Controls(props) {
+  let buttons = "";
+
+  if (props.revealAllAnswers) {
+    buttons = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      onClick: () => props.nextRound(),
+      className: "btn btn-large waves-effect waves-light hoverable green accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 300,
+        columnNumber: 7
+      }
+    }, "Next round");
+  } else {
+    buttons = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 315,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 316,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      onClick: () => props.undoLastAnswer(),
+      className: "btn btn-large waves-effect waves-light hoverable blue accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 317,
+        columnNumber: 11
+      }
+    }, "Undo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 330,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      onClick: () => props.showAnswers(),
+      className: "btn btn-large waves-effect waves-light hoverable red accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 331,
+        columnNumber: 11
+      }
+    }, "End round")));
+  }
+
+  const missesList = props.misses.map((miss, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: i,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 348,
+      columnNumber: 5
+    }
+  }, miss.player.name, ": ", miss.guess));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 354,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginTop: "50px",
+      height: "100px"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 355,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 361,
+      columnNumber: 9
+    }
+  }, "Misses"), missesList), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginTop: "150px"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 364,
+      columnNumber: 7
+    }
+  }, buttons));
+}
+
+class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    const listItems = this.props.playerScores.map((player, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: player.name,
+      className: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 378,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_6___default()({
+        "col s1": true
+      }),
+      style: {
+        minHeight: "25px",
+        backgroundColor: player.colour
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 379,
+        columnNumber: 9
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s4",
+      style: {
+        margin: "auto"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 389,
+        columnNumber: 9
+      }
+    }, player.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s1",
+      style: {
+        margin: "auto"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 398,
+        columnNumber: 9
+      }
+    }, player.score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s1",
+      style: {
+        margin: "auto"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 406,
+        columnNumber: 9
+      }
+    }, this.props.scoreChange && this.props.scoreChange.name === player.name && this.props.scoreChange.value)));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 419,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 420,
+        columnNumber: 9
+      }
+    }, "Leaderboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        marginLeft: "15px",
+        marginTop: "15px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 421,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_flip_move__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      duration: "2000",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 427,
+        columnNumber: 11
+      }
+    }, listItems)));
+  }
+
+}
+
+class Round extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+
+    this.onChange = e => {
+      this.setState({
+        [e.target.id]: e.target.value
+      });
+    };
+
+    this.state = {
+      guess: ""
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.playAudio = this.playAudio.bind(this);
+    this.getResult = this.getResult.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.question) {
+      this.setState({
+        question: newProps.question
+      }, () => this.forceUpdate());
+    }
+
+    if (newProps.currentRound !== this.props.currentRound) {
+      this.setState({
+        answer: undefined
+      }, () => this.forceUpdate());
+    } // if (this.props.revealAllAnswers) {
+    //   this.setState(
+    //     {
+    //       revealAllAnswers: this.props.revealAllAnswers,
+    //     },
+    //     () => this.forceUpdate()
+    //   );
+    // }
+
+  }
+
+  playAudio(audio) {
+    audio.play();
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const result = this.getResult(this.state.guess);
+
+    if (result.outcome === "wrong") {
+      const wrongAudio = new Audio(_data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4___default.a);
+      this.playAudio(wrongAudio);
+      this.setState({
+        guess: ""
+      });
+    } else if (result.outcome === "used") {
+      this.setState({
+        guess: ""
+      });
+    } else if (result.outcome === "correct") {
+      const correctAudio = new Audio(_data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3___default.a);
+      this.playAudio(correctAudio);
+      this.setState({
+        answer: result.answer,
+        guess: ""
+      }, () => this.forceUpdate());
+    }
+
+    this.props.updateResult(result);
+    console.log("end of on submit");
+  }
+
+  getResult(guess) {
+    const answer = this.state.question.answers.find(answer => answer.answer.toLowerCase().includes(guess.toLowerCase()));
+    let result = {};
+
+    if (answer && !answer.hasOwnProperty("used")) {
+      answer.used = false;
+      const position = this.state.question.answers.indexOf(answer);
+      result.outcome = "correct";
+      result.score = this.state.question.answers.length - position;
+      answer.player = this.props.currentPlayer;
+      answer.position = position;
+      result.player = this.props.currentPlayer;
+      result.answer = JSON.parse(JSON.stringify(answer));
+    } else if (answer && answer.hasOwnProperty("used")) {
+      result.outcome = "used";
+    } else {
+      result.outcome = "wrong";
+      result.player = this.props.currentPlayer;
+      result.guess = guess;
+    }
+
+    return result;
+  }
+
+  render() {
+    const question = this.props.question;
+    const currentPlayerFragment = this.props.allOut ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: {
+        color: "red"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 544,
+        columnNumber: 7
+      }
+    }, "ALL OUT") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 546,
+        columnNumber: 7
+      }
+    }, this.props.currentPlayer.name);
+    const playerGuessFragment = this.props.allOut ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: {
+        color: "red"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 550,
+        columnNumber: 7
+      }
+    }, "ALL OUT") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      type: "submit",
+      className: "btn btn-large waves-effect waves-light hoverable " + this.props.currentPlayer.colour + " accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 552,
+        columnNumber: 7
+      }
+    }, this.props.currentPlayer.name);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        marginTop: "25px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 571,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 572,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_flip_move__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      duration: "2000",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 573,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: question.theme,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 574,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 575,
+        columnNumber: 15
+      }
+    }, question.theme)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: question.question,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 577,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 578,
+        columnNumber: 15
+      }
+    }, question.question)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: question.condition,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 580,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 581,
+        columnNumber: 15
+      }
+    }, question.condition)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 586,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 587,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s12",
+      style: {
+        marginTop: "10px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 588,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      noValidate: true,
+      onSubmit: this.onSubmit,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 589,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "input-field col s2",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 590,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      onChange: this.onChange,
+      value: this.state.guess,
+      id: "guess",
+      type: "text",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 591,
+        columnNumber: 19
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      htmlFor: "guess",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 597,
+        columnNumber: 19
+      }
+    }, "Guess")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s2",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 599,
+        columnNumber: 17
+      }
+    }, playerGuessFragment)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        marginTop: "10px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 603,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnswerFields, {
+      numAnswers: this.props.question.answers.length,
+      submittedAnswer: this.state.answer,
+      revealAllAnswers: this.props.revealAllAnswers,
+      question: this.props.question,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 604,
+        columnNumber: 13
+      }
+    }))));
+  }
+
+}
+
+class AnswerFields extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      answers: []
+    };
+  }
+
+  componentDidMount() {
+    const numAnswers = this.props.numAnswers;
+    const newAnswers = [];
+
+    for (let i = 0; i < numAnswers; i++) {
+      newAnswers.push({});
+    }
+
+    this.setState({
+      answers: newAnswers
+    });
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.question.condition !== this.props.question.condition) {
+      const numAnswers = newProps.numAnswers;
+      const newAnswers = [];
+
+      for (let i = 0; i < numAnswers; i++) {
+        newAnswers.push({});
+      }
+
+      this.setState({
+        answers: newAnswers
+      }, () => this.forceUpdate());
+    }
+
+    if (newProps.submittedAnswer) {
+      const answer = newProps.submittedAnswer;
+      const newAnswers = this.state.answers;
+      newAnswers[answer.position] = answer;
+      this.setState({
+        answers: newAnswers
+      });
+    }
+
+    if (newProps.revealAllAnswers) {
+      let newAnswers = [];
+      this.state.answers.forEach((answer, i) => {
+        if (!answer.player) {
+          let unguessedAnswer = this.props.question.answers[i];
+          unguessedAnswer.used = true;
+          let player = {
+            name: "TEST",
+            colour: "#e6e9fc"
+          };
+          unguessedAnswer.player = player;
+          newAnswers.push(unguessedAnswer);
+        } else {
+          newAnswers.push(answer);
+        }
+
+        this.setState({
+          answers: newAnswers
+        }, () => this.forceUpdate());
+      });
+    }
+  }
+
+  render() {
+    const answerFields = [];
+    this.state.answers.forEach((answer, i) => {
+      answerFields.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnswerField, {
+        key: i + this.props.question.condition,
+        answer: answer,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 688,
+          columnNumber: 9
+        }
+      }));
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 693,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_flip_move__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      duration: "2000",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 694,
+        columnNumber: 9
+      }
+    }, answerFields));
+  }
+
+}
+
+class AnswerField extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      answerText: " "
+    };
+  }
+
+  render() {
+    const answer = this.props.answer;
+    let text = "";
+    let backgroundColour = "#e6e9fc";
+
+    if (answer && answer.player) {
+      if (answer.hasOwnProperty("answer")) {
+        text = text + answer.answer;
+
+        if (answer.hasOwnProperty("value")) {
+          text = text + ": " + answer.value;
+        }
+      }
+
+      backgroundColour = answer.player.colour || "#e6e9fc";
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 722,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row",
+      style: {
+        marginTop: "0px",
+        marginBottom: "0px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 723,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s4",
+      style: {
+        textAlign: "center",
+        marginBottom: "9px",
+        minHeight: "25px",
+        border: "1px solid grey",
+        backgroundImage: "linear-gradient(to right, " + backgroundColour + ", white," + backgroundColour + ")"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 730,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+      text: true,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 745,
+        columnNumber: 13
+      }
+    }, " ", text, " "))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Game);
+
+/***/ }),
+
+/***/ "./src/components/header.js":
+/*!**********************************!*\
+  !*** ./src/components/header.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\git\\quiz\\src\\components\\header.js";
+
+
+class Header extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      style: {
+        marginTop: "0px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5,
+        columnNumber: 12
+      }
+    }, "Quiz");
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./src/css/quiz.css":
+/*!**************************!*\
+  !*** ./src/css/quiz.css ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./quiz.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/css/quiz.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./quiz.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/css/quiz.css", function() {
+		var newContent = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./quiz.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/css/quiz.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/data/14876504_correct_by_robotsound_preview.mp3":
+/*!*************************************************************!*\
+  !*** ./src/data/14876504_correct_by_robotsound_preview.mp3 ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/14876504_correct_by_robotsound_preview.b739fd31.mp3";
+
+/***/ }),
+
+/***/ "./src/data/23205030_game-show-buzzer-wrong-answer_by_floraphonic_preview.mp3":
+/*!************************************************************************************!*\
+  !*** ./src/data/23205030_game-show-buzzer-wrong-answer_by_floraphonic_preview.mp3 ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/23205030_game-show-buzzer-wrong-answer_by_floraphonic_preview.66615ba4.mp3";
+
+/***/ }),
+
+/***/ "./src/data/questions.js":
+/*!*******************************!*\
+  !*** ./src/data/questions.js ***!
+  \*******************************/
+/*! exports provided: SET1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET1", function() { return SET1; });
+const SET1 = [{
+  theme: "Politics",
+  question: "American Presidents",
+  condition: "Last 20 from 1901 - present day, more points for earlier presidents",
+  answers: [{
+    answer: "Theodore Roosevelt",
+    value: "1901 - 1909"
+  }, {
+    answer: "William Howard Taft",
+    value: "1909 - 1913"
+  }, {
+    answer: "Woodrow Wilson",
+    value: "1913 - 1921"
+  }, {
+    answer: "Warren G. Harding",
+    value: "1921 - 1923"
+  }, {
+    answer: "Calvin Coolidge",
+    value: "1923 - 1929"
+  }, {
+    answer: "Herbert Hoover",
+    value: "1929 - 1933"
+  }, {
+    answer: "Franklin D. Roosevelt",
+    value: "1933 - 1945"
+  }, {
+    answer: "Harry S. Truman",
+    value: "1945 - 1953"
+  }, {
+    answer: "Dwight D. Eisenhower",
+    value: "1953 - 1961"
+  }, {
+    answer: "John F. Kennedy",
+    value: "1961 - 1963"
+  }, {
+    answer: "Lyndon B. Johnson",
+    value: "1963 - 1969"
+  }, {
+    answer: "Richard Nixon",
+    value: "1969 - 1974"
+  }, {
+    answer: "Gerald Ford",
+    value: "1974 - 1977"
+  }, {
+    answer: "Jimmy Carter",
+    value: "1977 - 1981"
+  }, {
+    answer: "Ronald Reagan",
+    value: "1981 - 1989"
+  }, {
+    answer: "George H. W. Bush",
+    value: "1989 - 1993"
+  }, {
+    answer: "Bill Clinton",
+    value: "1993 - 2001"
+  }, {
+    answer: "George W. Bush",
+    value: "2001 - 2009"
+  }, {
+    answer: "Barack Obama",
+    value: "2009 - 2017"
+  }, {
+    answer: "Donald Trump",
+    value: "2017 - "
+  }]
+}, {
+  theme: "Geography",
+  question: "20 smallest European countries/territories by population",
+  condition: "Lowest to highest - more points for lower populated countries",
+  answers: [{
+    answer: "Vatican City",
+    value: "799"
+  }, {
+    answer: "Aland Islands (Finland)",
+    value: "29,489"
+  }, {
+    answer: "San Marino",
+    value: "33,407"
+  }, {
+    answer: "Gibraltar (UK)",
+    value: "33,573"
+  }, {
+    answer: "Liechtenstein",
+    value: "38,201"
+  }, {
+    answer: "Monaco",
+    value: "38,300"
+  }, {
+    answer: "Faroe Islands (Denmark)",
+    value: "51,237"
+  }, {
+    answer: "Guernsey (UK)",
+    value: "62,063"
+  }, {
+    answer: "Andorra",
+    value: "74,794"
+  }, {
+    answer: "Isle of Man (UK)",
+    value: "83,314"
+  }, {
+    answer: "Jersey (UK)",
+    value: "105,500"
+  }, {
+    answer: "Iceland",
+    value: "355,620"
+  }, {
+    answer: "Malta",
+    value: "475,701"
+  }, {
+    answer: "Luxembourg",
+    value: "626,108"
+  }, {
+    answer: "Montenegro",
+    value: "622,359"
+  }, {
+    answer: "Cyprus",
+    value: "864,200"
+  }, {
+    answer: "Estonia",
+    value: "1,328,976"
+  }, {
+    answer: "Kosovo",
+    value: "1,798,506"
+  }, {
+    answer: "Latvia",
+    value: "1,921,300"
+  }, {
+    answer: "Slovenia",
+    value: "2,070,050"
+  }]
+}, {
+  theme: "Sport",
+  question: "Top 20 footballers by total accumulated transfer fees",
+  condition: "Highest to lowest - more points for higher total transfer fee",
+  answers: [{
+    answer: "Neymar",
+    value: "£279.18m"
+  }, {
+    answer: "Cristiano Ronaldo",
+    value: "£207.00m"
+  }, {
+    answer: "Romelu Lukaku",
+    value: "£183.20m"
+  }, {
+    answer: "Alvaro Morata",
+    value: "£161.10m"
+  }, {
+    answer: "Angel Di Maria",
+    value: "£161.10m"
+  }, {
+    answer: "Antoine Griezmann",
+    value: "£156.60m"
+  }, {
+    answer: "Philippe Coutinho",
+    value: "£153.27m"
+  }, {
+    answer: "Zlatan Ibrahimovic",
+    value: "£152.19m"
+  }, {
+    answer: "Gonzalo Higuain",
+    value: "£143.10m"
+  }, {
+    answer: "Kylian Mbappe",
+    value: "£130.50m"
+  }, {
+    answer: "James Rodriguez",
+    value: "£126.57m"
+  }, {
+    answer: "Ousmane Dembele",
+    value: "£126.00m"
+  }, {
+    answer: "Eden Hazard",
+    value: "£121.50m"
+  }, {
+    answer: "Paulinho",
+    value: "£114.17m"
+  }, {
+    answer: "Joao Felix",
+    value: "£113.40m"
+  }, {
+    answer: "Nicolas Anelka",
+    value: "£111.47m"
+  }, {
+    answer: "Hernan Crespo",
+    value: "£110.65m"
+  }, {
+    answer: "Joao Cancelo",
+    value: "£108.36m"
+  }, {
+    answer: "Juan Sebastian Veron",
+    value: "£107.64m"
+  }, {
+    answer: "David Luiz",
+    value: "£106.83m"
+  }]
+}, {
+  theme: "Cars",
+  question: "Top 20 car marques by total new passenger vehicle registrations in the UK 2019",
+  condition: "Lowest to highest - more points for fewer sold marques",
+  answers: [{
+    answer: "Mazda",
+    value: "39,602"
+  }, {
+    answer: "Honda",
+    value: "52,570"
+  }, {
+    answer: "Citroen",
+    value: "50,806"
+  }, {
+    answer: "Volvo",
+    value: "56,208"
+  }, {
+    answer: "Renault",
+    value: "59,132"
+  }, {
+    answer: "MINI",
+    value: "64,884"
+  }, {
+    answer: "SEAT",
+    value: "68,798"
+  }, {
+    answer: "Skoda",
+    value: "75,053"
+  }, {
+    answer: "Land Rover",
+    value: "76,546"
+  }, {
+    answer: "Peugeot",
+    value: "80,851"
+  }, {
+    answer: "Hyundai",
+    value: "83,284"
+  }, {
+    answer: "Nissan",
+    value: "92,372"
+  }, {
+    answer: "Kia",
+    value: "97,323"
+  }, {
+    answer: "Toyota",
+    value: "105,192"
+  }, {
+    answer: "Audi",
+    value: "138,924"
+  }, {
+    answer: "Vauxhall",
+    value: "159,830"
+  }, {
+    answer: "BMW",
+    value: "169,753"
+  }, {
+    answer: "Mercedes-Benz",
+    value: "171,823"
+  }, {
+    answer: "Volkswagen",
+    value: "200,771"
+  }, {
+    answer: "Ford",
+    value: "236,137"
+  }]
+}, {
+  theme: "Board games",
+  question: "Top 20 highest selling board games of all time",
+  condition: "Highest to lowest - more points for higher selling games",
+  answers: [{
+    answer: "Chess"
+  }, {
+    answer: "Draughts"
+  }, {
+    answer: "Backgammon"
+  }, {
+    answer: "Monopoly"
+  }, {
+    answer: "Scrabble"
+  }, {
+    answer: "Cluedo"
+  }, {
+    answer: "Trivial pursuit"
+  }, {
+    answer: "Battleship"
+  }, {
+    answer: "Candy land"
+  }, {
+    answer: "The Game of Life"
+  }, {
+    answer: "Rummikub"
+  }, {
+    answer: "Othello"
+  }, {
+    answer: "Pictionary"
+  }, {
+    answer: "Risk"
+  }, {
+    answer: "Catan"
+  }, {
+    answer: "Stratego"
+  }, {
+    answer: "Mancala"
+  }, {
+    answer: "Blokus"
+  }, {
+    answer: "Cranium"
+  }, {
+    answer: "Connect four"
+  }]
+}, {
+  theme: "Music",
+  question: "Top 20 best selling artists by total certified album units sold in the US including streaming",
+  condition: "Highest to lowest - more points for higher selling artists",
+  answers: [{
+    answer: "The Beatles",
+    value: "183 million units"
+  }, {
+    answer: "Garth Brooks",
+    value: "156 million units"
+  }, {
+    answer: "Elvis Presley",
+    value: "146.5 million units"
+  }, {
+    answer: "Eagles",
+    value: "120 million units"
+  }, {
+    answer: "Led Zeppelin",
+    value: "111.5 million units"
+  }, {
+    answer: "Billy Joel",
+    value: "84.5 million units"
+  }, {
+    answer: "Michael Jackson",
+    value: "84 million units"
+  }, {
+    answer: "Elton John",
+    value: "79 million units"
+  }, {
+    answer: "AC DC",
+    value: "75 million units"
+  }, {
+    answer: "Pink Floyd",
+    value: "75 million units"
+  }, {
+    answer: "George Strait",
+    value: "69 million units"
+  }, {
+    answer: "Barbra Streisand",
+    value: "68.5 million units"
+  }, {
+    answer: "Aerosmith",
+    value: "66.5 million units"
+  }, {
+    answer: "Mariah Carey",
+    value: "66.5 million units"
+  }, {
+    answer: "The Rolling Stones",
+    value: "66.5 million units"
+  }, {
+    answer: "Bruce Springsteen",
+    value: "65.5 million units"
+  }, {
+    answer: "Madonna",
+    value: "64.5 million units"
+  }, {
+    answer: "Metallica",
+    value: "63 million units"
+  }, {
+    answer: "Whitney Houston",
+    value: "59 million units"
+  }, {
+    answer: "Van Halen",
+    value: "56.5 million units"
+  }]
+}, {
+  theme: "Geography",
+  question: "Top 20 capital city populations by official capital area, not wider metropolitan/urban district",
+  condition: "Lowest to highest - more points for smaller capitals, half points if only country provided",
+  answers: [{
+    answer: "Beijing",
+    answer2: "China",
+    value: "21,542,000"
+  }, {
+    answer: "New Delhi",
+    answer2: "India",
+    value: "14,200,004"
+  }, {
+    answer: "Tokyo",
+    answer2: "Japan",
+    value: "13,929,286"
+  }, {
+    answer: "Moscow",
+    answer2: "Russia",
+    value: "12,506,468"
+  }, {
+    answer: "Kinshasa",
+    answer2: "DR Congo",
+    value: "11,855,000"
+  }, {
+    answer: "Jakarta",
+    answer2: "Indonesia",
+    value: "10,075,310"
+  }, {
+    answer: "Seoul",
+    answer2: "South Korea",
+    value: "9,838,892"
+  }, {
+    answer: "Cairo",
+    answer2: "Egypt",
+    value: "9,500,000"
+  }, {
+    answer: "Mexico City",
+    answer2: "Mexico",
+    value: "8,918,653"
+  }, {
+    answer: "London",
+    answer2: "United Kingdom",
+    value: "8,908,081"
+  }, {
+    answer: "Dhaka",
+    answer: "Bangladesh",
+    value: "8,906,039"
+  }, {
+    answer: "Lima",
+    answer2: "Peru",
+    value: "8,852,000"
+  }, {
+    answer: "Tehran",
+    answer2: "Iran",
+    value: "8,693,706"
+  }, {
+    answer: "Bangkok",
+    answer2: "Thailand",
+    value: "8,305,218"
+  }, {
+    answer: "Hanoi",
+    answer2: "Vietnam",
+    value: "7,781,631"
+  }, {
+    answer: "Riyadh",
+    answer2: "Saudi Arabia",
+    value: "7,676,654"
+  }, {
+    answer: "Hong Kong",
+    answer2: "Hong Kong",
+    value: "7,482,500"
+  }, {
+    answer: "Bogota",
+    answer2: "Colombia",
+    value: "7,181,469"
+  }, {
+    answer: "Baghdad",
+    answer2: "Iraq",
+    value: "6,719,500"
+  }, {
+    answer: "Santiago",
+    answer2: "Chile",
+    value: "6,310,000"
+  }]
+}, {
+  theme: "Geography",
+  question: "Top 20 European countries by population and fewer than the UK, including trans-contintenal",
+  condition: "Lowest to highest - more points for lower populated countries",
+  answers: [{
+    answer: "Finland",
+    value: "5,522,015"
+  }, {
+    answer: "Denmark",
+    value: "5,806,015"
+  }, {
+    answer: "Serbia",
+    value: "6,963,764"
+  }, {
+    answer: "Bulgaria",
+    value: "7,000,039"
+  }, {
+    answer: "Switzerland",
+    value: "8,526,932"
+  }, {
+    answer: "Austria",
+    value: "8,857,960"
+  }, {
+    answer: "Belarus",
+    value: "9,477,100"
+  }, {
+    answer: "Hungary",
+    value: "9,771,000"
+  }, {
+    answer: "Portugal",
+    value: "10,276,617"
+  }, {
+    answer: "Sweden",
+    value: "10,319,601"
+  }, {
+    answer: "Czech Republic",
+    value: "10,627,794"
+  }, {
+    answer: "Greece",
+    value: "10,768,193"
+  }, {
+    answer: "Belgium",
+    value: "11,449,656"
+  }, {
+    answer: "Netherlands",
+    value: "17,417,600"
+  }, {
+    answer: "Kazakhstan",
+    value: "18,356,900"
+  }, {
+    answer: "Romania",
+    value: "19,523,621"
+  }, {
+    answer: "Poland",
+    value: "38,433,600"
+  }, {
+    answer: "Ukraine",
+    value: "41,660,982"
+  }, {
+    answer: "Spain",
+    value: "46,733,038"
+  }, {
+    answer: "Italy",
+    value: "60,390,560"
+  }]
+}];
+
+/***/ }),
+
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css", function() {
+		var newContent = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var _serviceWorker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./serviceWorker */ "./src/serviceWorker.js");
+var _jsxFileName = "C:\\git\\quiz\\src\\index.js";
+
+
+
+
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.StrictMode, {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 8,
+    columnNumber: 3
+  }
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 9,
+    columnNumber: 5
+  }
+})), document.getElementById("root")); // If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+
+_serviceWorker__WEBPACK_IMPORTED_MODULE_4__["unregister"]();
+
+/***/ }),
+
+/***/ "./src/serviceWorker.js":
+/*!******************************!*\
+  !*** ./src/serviceWorker.js ***!
+  \******************************/
+/*! exports provided: register, unregister */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unregister", function() { return unregister; });
+// This optional code is used to register a service worker.
+// register() is not called by default.
+// This lets the app load faster on subsequent visits in production, and gives
+// it offline capabilities. However, it also means that developers (and users)
+// will only see deployed updates on subsequent visits to a page, after all the
+// existing tabs open on the page have been closed, since previously cached
+// resources are updated in the background.
+// To learn more about the benefits of this model and instructions on how to
+// opt-in, read https://bit.ly/CRA-PWA
+const isLocalhost = Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
+window.location.hostname === '[::1]' || // 127.0.0.0/8 are considered localhost for IPv4.
+window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+function register(config) {
+  if (false) {}
+}
+
+function registerValidSW(swUrl, config) {
+  navigator.serviceWorker.register(swUrl).then(registration => {
+    registration.onupdatefound = () => {
+      const installingWorker = registration.installing;
+
+      if (installingWorker == null) {
+        return;
+      }
+
+      installingWorker.onstatechange = () => {
+        if (installingWorker.state === 'installed') {
+          if (navigator.serviceWorker.controller) {
+            // At this point, the updated precached content has been fetched,
+            // but the previous service worker will still serve the older
+            // content until all client tabs are closed.
+            console.log('New content is available and will be used when all ' + 'tabs for this page are closed. See https://bit.ly/CRA-PWA.'); // Execute callback
+
+            if (config && config.onUpdate) {
+              config.onUpdate(registration);
+            }
+          } else {
+            // At this point, everything has been precached.
+            // It's the perfect time to display a
+            // "Content is cached for offline use." message.
+            console.log('Content is cached for offline use.'); // Execute callback
+
+            if (config && config.onSuccess) {
+              config.onSuccess(registration);
+            }
+          }
+        }
+      };
+    };
+  }).catch(error => {
+    console.error('Error during service worker registration:', error);
+  });
+}
+
+function checkValidServiceWorker(swUrl, config) {
+  // Check if the service worker can be found. If it can't reload the page.
+  fetch(swUrl, {
+    headers: {
+      'Service-Worker': 'script'
+    }
+  }).then(response => {
+    // Ensure service worker exists, and that we really are getting a JS file.
+    const contentType = response.headers.get('content-type');
+
+    if (response.status === 404 || contentType != null && contentType.indexOf('javascript') === -1) {
+      // No service worker found. Probably a different app. Reload the page.
+      navigator.serviceWorker.ready.then(registration => {
+        registration.unregister().then(() => {
+          window.location.reload();
+        });
+      });
+    } else {
+      // Service worker found. Proceed as normal.
+      registerValidSW(swUrl, config);
+    }
+  }).catch(() => {
+    console.log('No internet connection found. App is running in offline mode.');
+  });
+}
+
+function unregister() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister();
+    }).catch(error => {
+      console.error(error.message);
+    });
+  }
+}
+
+/***/ }),
+
+/***/ 1:
+/*!**************************************************************************************************************!*\
+  !*** multi (webpack)/hot/dev-server.js ./node_modules/react-dev-utils/webpackHotDevClient.js ./src/index.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! C:\git\quiz\node_modules\webpack\hot\dev-server.js */"./node_modules/webpack/hot/dev-server.js");
+__webpack_require__(/*! C:\git\quiz\node_modules\react-dev-utils\webpackHotDevClient.js */"./node_modules/react-dev-utils/webpackHotDevClient.js");
+module.exports = __webpack_require__(/*! C:\git\quiz\src\index.js */"./src/index.js");
+
+
+/***/ })
+
+},[[1,"runtime-main",0]]]);
+//# sourceMappingURL=main.chunk.js.map

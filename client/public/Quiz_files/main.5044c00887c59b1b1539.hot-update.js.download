@@ -1,0 +1,1025 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/game.js":
+/*!********************************!*\
+  !*** ./src/components/game.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_quiz_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/quiz.css */ "./src/css/quiz.css");
+/* harmony import */ var _css_quiz_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_quiz_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _data_questions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/questions */ "./src/data/questions.js");
+/* harmony import */ var _data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/14876504_correct_by_robotsound_preview.mp3 */ "./src/data/14876504_correct_by_robotsound_preview.mp3");
+/* harmony import */ var _data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/23205030_game-show-buzzer-wrong-answer_by_floraphonic_preview.mp3 */ "./src/data/23205030_game-show-buzzer-wrong-answer_by_floraphonic_preview.mp3");
+/* harmony import */ var _data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_flip_move__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-flip-move */ "./node_modules/react-flip-move/dist/react-flip-move.es.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_6__);
+var _jsxFileName = "C:\\git\\quiz\\src\\components\\game.js";
+
+
+
+
+
+
+
+
+class Game extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      players: [],
+      playerScores: [],
+      originalOrderPlayerScores: [],
+      misses: [],
+      questions: _data_questions__WEBPACK_IMPORTED_MODULE_2__["SET1"],
+      currentRound: 0,
+      allOut: false,
+      revealAllAnswers: false,
+      currentPlayer: {
+        name: "",
+        score: 0,
+        colour: "",
+        questions: [],
+        wrongAnswers: []
+      }
+    };
+    this.initialiseGame = this.initialiseGame.bind(this);
+    this.shufflePlayers = this.shufflePlayers.bind(this);
+    this.getColour = this.getColour.bind(this);
+    this.updateResult = this.updateResult.bind(this);
+    this.sortScores = this.sortScores.bind(this);
+    this.advancePlayer = this.advancePlayer.bind(this);
+    this.showAnswers = this.showAnswers.bind(this);
+    this.nextRound = this.nextRound.bind(this);
+    this.undoLastAnswer = this.undoLastAnswer.bind(this);
+  }
+
+  componentDidMount() {
+    let players = this.props.location.state.players;
+    this.setState({
+      players: players
+    }, () => this.initialiseGame());
+  }
+
+  allPlayersOut() {
+    let outPlayers = 0;
+    this.state.playerScores.forEach(player => {
+      if (player.wrongAnswers[this.state.currentRound] === 2) {
+        outPlayers++;
+      }
+    });
+    return outPlayers === this.state.playerScores.length;
+  }
+
+  undoLastAnswer() {
+    if (this.state.result) {
+      const result = this.state.result;
+      const player = this.state.result.player;
+      let scoreChangeValue = "";
+
+      if (result.outcome === "wrong") {
+        player.score = player.score + 10;
+        scoreChangeValue = "+10";
+        player.wrongAnswers[this.state.currentRound] = player.wrongAnswers[this.state.currentRound] - 1;
+      } else if (result.outcome === "correct") {
+        player.score = player.score - result.score;
+        scoreChangeValue = "-" + result.score;
+      }
+
+      this.state.misses.pop();
+      this.setState({
+        scoreChange: {
+          name: player.name,
+          value: scoreChangeValue
+        },
+        result: result,
+        currentPlayer: player
+      }, () => {
+        this.sortScores();
+      });
+    }
+  }
+
+  advancePlayer() {
+    if (!this.allPlayersOut()) {
+      const currentPlayerName = this.state.currentPlayer.name;
+      let currentIndex = this.state.originalOrderPlayerScores.findIndex(player => player.name === currentPlayerName);
+      let nextIndex = -1;
+      let found = false;
+
+      while (!found) {
+        nextIndex = currentIndex === 0 ? this.state.originalOrderPlayerScores.length - 1 : currentIndex - 1;
+
+        if (this.state.originalOrderPlayerScores[nextIndex].wrongAnswers[this.state.currentRound] < 2) {
+          found = true;
+        }
+
+        currentIndex = nextIndex;
+      }
+
+      this.setState({
+        currentPlayer: this.state.originalOrderPlayerScores[nextIndex]
+      });
+    } else {
+      this.setState({
+        allOut: true
+      });
+    }
+  }
+
+  showAnswers() {
+    this.setState({
+      revealAllAnswers: true,
+      answer: undefined
+    }, () => this.forceUpdate());
+  }
+
+  nextRound() {
+    this.state.playerScores.forEach(player => {
+      player.wrongAnswers.push(0);
+    });
+    this.setState({
+      currentRound: this.state.currentRound + 1,
+      revealAllAnswers: false,
+      allOut: false,
+      misses: [],
+      originalOrderPlayerScores: [...this.state.playerScores],
+      currentPlayer: this.state.playerScores[this.state.playerScores.length - 1]
+    }, () => this.forceUpdate());
+  }
+
+  updateResult(result) {
+    console.log("start of update reslt");
+
+    if (result.outcome !== "used") {
+      var scoreChangeValue = "";
+
+      if (result.outcome === "correct") {
+        this.state.currentPlayer.score += result.score;
+        scoreChangeValue = "+" + result.score;
+      } else if (result.outcome === "wrong") {
+        this.setState({
+          misses: this.state.misses.concat(result)
+        });
+        this.state.currentPlayer.score -= 10;
+        scoreChangeValue = "-" + 10;
+
+        if (this.state.currentPlayer.wrongAnswers && this.state.currentPlayer.wrongAnswers[this.state.currentRound]) {
+          this.state.currentPlayer.wrongAnswers[this.state.currentRound]++;
+        } else {
+          this.state.currentPlayer.wrongAnswers[this.state.currentRound] = 1;
+        }
+      }
+
+      this.setState({
+        scoreChange: {
+          name: this.state.currentPlayer.name,
+          value: scoreChangeValue
+        },
+        result: result
+      }, () => {
+        this.advancePlayer();
+        this.sortScores();
+      });
+    }
+
+    console.log("end of update result");
+  }
+
+  sortScores() {
+    const sortedScores = [...this.state.playerScores];
+    sortedScores.sort((player1, player2) => player2.score - player1.score);
+    this.setState({
+      playerScores: sortedScores
+    }, () => {
+      this.forceUpdate();
+    });
+  }
+
+  getColour(i) {
+    return ["red", "cyan", "green", "yellow", "orange"][i];
+  }
+
+  initialiseGame() {
+    let playerScores = [];
+    this.state.players.forEach((player, i) => {
+      playerScores.push({
+        name: player,
+        score: 0,
+        colour: this.getColour(i),
+        wrongAnswers: [0]
+      });
+    });
+    this.setState({
+      playerScores: playerScores,
+      currentPlayer: playerScores[playerScores.length - 1]
+    }, () => {
+      this.shufflePlayers();
+    });
+  }
+
+  shufflePlayers() {
+    let newPlayerScores = this.state.playerScores,
+        currentIndex = this.state.playerScores.length,
+        temporaryValue,
+        randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = newPlayerScores[currentIndex];
+      newPlayerScores[currentIndex] = newPlayerScores[randomIndex];
+      newPlayerScores[randomIndex] = temporaryValue;
+    }
+
+    this.setState({
+      playerScores: newPlayerScores,
+      originalOrderPlayerScores: newPlayerScores
+    }, () => this.forceUpdate());
+  }
+
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 261,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 262,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 263,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Leaderboard, {
+      playerScores: this.state.playerScores,
+      currentPlayer: this.state.currentPlayer,
+      scoreChange: this.state.scoreChange,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 264,
+        columnNumber: 13
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Controls, {
+      showAnswers: this.showAnswers,
+      revealAllAnswers: this.state.revealAllAnswers,
+      nextRound: this.nextRound,
+      misses: this.state.misses,
+      undoLastAnswer: this.undoLastAnswer,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 270,
+        columnNumber: 13
+      }
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s9",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 279,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Round, {
+      question: this.state.questions[this.state.currentRound],
+      currentRound: this.state.currentRound,
+      playerScores: this.state.playerScores,
+      updateResult: this.updateResult,
+      currentPlayer: this.state.currentPlayer,
+      allOut: this.state.allOut,
+      revealAllAnswers: this.state.revealAllAnswers,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 280,
+        columnNumber: 13
+      }
+    }))));
+  }
+
+}
+
+function Controls(props) {
+  let buttons = "";
+
+  if (props.revealAllAnswers) {
+    buttons = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      onClick: () => props.nextRound(),
+      className: "btn btn-large waves-effect waves-light hoverable green accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 300,
+        columnNumber: 7
+      }
+    }, "Next round");
+  } else {
+    buttons = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 315,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 316,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      onClick: () => props.undoLastAnswer(),
+      className: "btn btn-large waves-effect waves-light hoverable blue accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 317,
+        columnNumber: 11
+      }
+    }, "Undo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 330,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      onClick: () => props.showAnswers(),
+      className: "btn btn-large waves-effect waves-light hoverable red accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 331,
+        columnNumber: 11
+      }
+    }, "End round")));
+  }
+
+  const missesList = props.misses.map((miss, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: i,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 348,
+      columnNumber: 5
+    }
+  }, miss.player.name, ": ", miss.guess));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 354,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginTop: "50px",
+      height: "100px"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 355,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 361,
+      columnNumber: 9
+    }
+  }, "Misses"), missesList), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginTop: "150px"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 364,
+      columnNumber: 7
+    }
+  }, buttons));
+}
+
+class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    const listItems = this.props.playerScores.map((player, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: player.name,
+      className: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 378,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_6___default()({
+        "col s1": true
+      }),
+      style: {
+        minHeight: "25px",
+        backgroundColor: player.colour
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 379,
+        columnNumber: 9
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s4",
+      style: {
+        margin: "auto"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 389,
+        columnNumber: 9
+      }
+    }, player.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s1",
+      style: {
+        margin: "auto"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 398,
+        columnNumber: 9
+      }
+    }, player.score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s1",
+      style: {
+        margin: "auto"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 406,
+        columnNumber: 9
+      }
+    }, this.props.scoreChange && this.props.scoreChange.name === player.name && this.props.scoreChange.value)));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 419,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 420,
+        columnNumber: 9
+      }
+    }, "Leaderboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        marginLeft: "15px",
+        marginTop: "15px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 421,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_flip_move__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      duration: "2000",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 427,
+        columnNumber: 11
+      }
+    }, listItems)));
+  }
+
+}
+
+class Round extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+
+    this.onChange = e => {
+      this.setState({
+        [e.target.id]: e.target.value
+      });
+    };
+
+    this.state = {
+      guess: ""
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.playAudio = this.playAudio.bind(this);
+    this.getResult = this.getResult.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.question) {
+      this.setState({
+        question: newProps.question
+      }, () => this.forceUpdate());
+    }
+
+    if (newProps.currentRound !== this.props.currentRound) {
+      this.setState({
+        answer: undefined
+      }, () => this.forceUpdate());
+    } // if (this.props.revealAllAnswers) {
+    //   this.setState(
+    //     {
+    //       revealAllAnswers: this.props.revealAllAnswers,
+    //     },
+    //     () => this.forceUpdate()
+    //   );
+    // }
+
+  }
+
+  playAudio(audio) {
+    audio.play();
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const result = this.getResult(this.state.guess);
+
+    if (result.outcome === "wrong") {
+      const wrongAudio = new Audio(_data_23205030_game_show_buzzer_wrong_answer_by_floraphonic_preview_mp3__WEBPACK_IMPORTED_MODULE_4___default.a);
+      this.playAudio(wrongAudio);
+      this.setState({
+        guess: ""
+      });
+    } else if (result.outcome === "used") {
+      this.setState({
+        guess: ""
+      });
+    } else if (result.outcome === "correct") {
+      const correctAudio = new Audio(_data_14876504_correct_by_robotsound_preview_mp3__WEBPACK_IMPORTED_MODULE_3___default.a);
+      this.playAudio(correctAudio);
+      this.setState({
+        answer: result.answer,
+        guess: ""
+      }, () => this.forceUpdate());
+    }
+
+    this.props.updateResult(result);
+    console.log("end of on submit");
+  }
+
+  getResult(guess) {
+    const answer = this.state.question.answers.find(answer => answer.answer.toLowerCase().includes(guess.toLowerCase()));
+    let result = {};
+
+    if (answer && !answer.hasOwnProperty("used")) {
+      answer.used = false;
+      const position = this.state.question.answers.indexOf(answer);
+      result.outcome = "correct";
+      result.score = this.state.question.answers.length - position;
+      answer.player = this.props.currentPlayer;
+      answer.position = position;
+      result.player = this.props.currentPlayer;
+      result.answer = JSON.parse(JSON.stringify(answer));
+    } else if (answer && answer.hasOwnProperty("used")) {
+      result.outcome = "used";
+    } else {
+      result.outcome = "wrong";
+      result.player = this.props.currentPlayer;
+      result.guess = guess;
+    }
+
+    return result;
+  }
+
+  render() {
+    const question = this.props.question;
+    const currentPlayerFragment = this.props.allOut ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: {
+        color: "red"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 544,
+        columnNumber: 7
+      }
+    }, "ALL OUT") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 546,
+        columnNumber: 7
+      }
+    }, this.props.currentPlayer.name);
+    const playerGuessFragment = this.props.allOut ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: {
+        color: "red"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 550,
+        columnNumber: 7
+      }
+    }, "ALL OUT") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: {
+        width: "150px",
+        borderRadius: "3px",
+        letterSpacing: "1.5px",
+        marginTop: "1rem"
+      },
+      type: "submit",
+      className: "btn btn-large waves-effect waves-light hoverable " + this.props.currentPlayer.colour + " accent-3",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 552,
+        columnNumber: 7
+      }
+    }, this.props.currentPlayer.name);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        marginTop: "25px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 571,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 572,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_flip_move__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      duration: "2000",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 573,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: question.theme,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 574,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 575,
+        columnNumber: 15
+      }
+    }, question.theme)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: question.question,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 577,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 578,
+        columnNumber: 15
+      }
+    }, question.question)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: question.condition,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 580,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 581,
+        columnNumber: 15
+      }
+    }, question.condition)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 586,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 587,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s12",
+      style: {
+        marginTop: "10px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 588,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      noValidate: true,
+      onSubmit: this.onSubmit,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 589,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "input-field col s2",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 590,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      onChange: this.onChange,
+      value: this.state.guess,
+      id: "guess",
+      type: "text",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 591,
+        columnNumber: 19
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      htmlFor: "guess",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 597,
+        columnNumber: 19
+      }
+    }, "Guess")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s2",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 599,
+        columnNumber: 17
+      }
+    }, playerGuessFragment)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        marginTop: "10px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 603,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnswerFields, {
+      numAnswers: this.props.question.answers.length,
+      submittedAnswer: this.state.answer,
+      revealAllAnswers: this.props.revealAllAnswers,
+      question: this.props.question,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 604,
+        columnNumber: 13
+      }
+    }))));
+  }
+
+}
+
+class AnswerFields extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      answers: []
+    };
+  }
+
+  componentDidMount() {
+    const numAnswers = this.props.numAnswers;
+    const newAnswers = [];
+
+    for (let i = 0; i < numAnswers; i++) {
+      newAnswers.push({});
+    }
+
+    this.setState({
+      answers: newAnswers
+    });
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.question.condition !== this.props.question.condition) {
+      const numAnswers = newProps.numAnswers;
+      const newAnswers = [];
+
+      for (let i = 0; i < numAnswers; i++) {
+        newAnswers.push({});
+      }
+
+      this.setState({
+        answers: newAnswers
+      }, () => this.forceUpdate());
+    }
+
+    if (newProps.submittedAnswer) {
+      const answer = newProps.submittedAnswer;
+      const newAnswers = this.state.answers;
+      newAnswers[answer.position] = answer;
+      this.setState({
+        answers: newAnswers
+      });
+    }
+
+    if (newProps.revealAllAnswers) {
+      let newAnswers = [];
+      this.state.answers.forEach((answer, i) => {
+        if (!answer.player) {
+          let unguessedAnswer = this.props.question.answers[i];
+          unguessedAnswer.used = true;
+          let player = {
+            name: "TEST",
+            colour: "#e6e9fc"
+          };
+          unguessedAnswer.player = player;
+          newAnswers.push(unguessedAnswer);
+        } else {
+          newAnswers.push(answer);
+        }
+
+        this.setState({
+          answers: newAnswers
+        }, () => this.forceUpdate());
+      });
+    }
+  }
+
+  render() {
+    const answerFields = [];
+    this.state.answers.forEach((answer, i) => {
+      answerFields.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnswerField, {
+        key: i + this.props.question.condition,
+        answer: answer,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 688,
+          columnNumber: 9
+        }
+      }));
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 693,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_flip_move__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      duration: "2000",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 694,
+        columnNumber: 9
+      }
+    }, answerFields));
+  }
+
+}
+
+class AnswerField extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      answerText: " "
+    };
+  }
+
+  render() {
+    const answer = this.props.answer;
+    let text = "";
+    let backgroundColour = "#e6e9fc";
+
+    if (answer && answer.player) {
+      if (answer.hasOwnProperty("answer")) {
+        text = text + answer.answer;
+
+        if (answer.hasOwnProperty("value")) {
+          text = text + ": " + answer.value;
+        }
+      }
+
+      backgroundColour = answer.player.colour || "#e6e9fc";
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 722,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row",
+      style: {
+        marginTop: "0px",
+        marginBottom: "0px"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 723,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col s4",
+      style: {
+        textAlign: "center",
+        marginBottom: "9px",
+        minHeight: "25px",
+        border: "1px solid grey",
+        backgroundImage: "linear-gradient(to right, " + backgroundColour + ", white," + backgroundColour + ")"
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 730,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+      text: true,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 745,
+        columnNumber: 13
+      }
+    }, " ", text, " "))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Game);
+
+/***/ })
+
+})
+//# sourceMappingURL=main.5044c00887c59b1b1539.hot-update.js.map
